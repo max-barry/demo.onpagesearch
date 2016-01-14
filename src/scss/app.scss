@@ -19,10 +19,90 @@ Settings & variables
 /**
 Custom resets
 */
+$pink: #f50057;
+$blue: #2196F3;
+$dark: rgba(0, 0, 0, 0.3);
+
+
 html {
     box-sizing: border-box;
 }
 
 *, *:before, *:after {
     box-sizing: inherit;
+}
+
+body {
+    background-color: $blue;
+    color: white;
+    font-weight: 300;
+}
+
+main {
+    max-width: 970px;
+    display: block;
+    margin: 5*$blh auto;
+}
+
+input {
+    width: 100%;
+    outline: 0;
+    border: 0;
+    background-color: $dark;
+    min-height: 3*$blh;
+    padding: $blh;
+    font-size: 2*$blh;
+    font-family: $heavy-font-family;
+    font-weight: 700;
+    position: relative;
+    text-transform: uppercase;
+}
+
+$inputColor: rgba(255, 255, 255, 0.5);
+input{
+    color: $inputColor;
+}
+::-webkit-input-placeholder { color: $inputColor; }
+::-moz-placeholder { color: $inputColor; } /* firefox 19+ */
+:-ms-input-placeholder { color: $inputColor; } /* ie */
+input:-moz-placeholder { color: $inputColor; }
+
+
+li {
+    $w: $blh;
+    padding-left: $w*2;
+    position: relative;
+    &:before {
+        width: $w;
+        content: "";
+        background-color: $pink;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+    }
+    &.hasQuery:not(.match) {
+        display: none;
+    }
+}
+
+.highlight {
+    border-bottom: 5px solid $dark;
+}
+
+hr {
+    margin: 5*$blh auto;
+    width: 180px;
+    background-color: white;
+    border-color: white;
+}
+
+a, a:visited {
+    color: white;
+}
+
+aside {
+    position: fixed;
+    top: $blh;
+    left: $blh;
 }

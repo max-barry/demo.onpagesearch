@@ -2,7 +2,7 @@ module.exports = {
     surge: {
         options: {
             project: "<%= package.paths.build %>",
-            domain: null
+            domain: "search.demo.mxbry.com"
         }
     },
     cacheBust: {

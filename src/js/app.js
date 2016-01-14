@@ -3,6 +3,7 @@ var $ = require("jquery"),
 
 var searchableContentSelector = ".searchable",
 	matchClass = "match",
+	hasQueryClass = "hasQuery",
 	termHighlightClass = "highlight";
 
 var exactMatch = false;
@@ -61,13 +62,15 @@ var highlightMatches = function(els, query) {
 
 var searchDom = function() {
 	/**
-	On key down search the DOM for current input
+		On key down search the DOM for current input
 	*/
 	var inputVal = $input.val().trim().toLowerCase();
 
-	// Reset all matches by...
-	// Removing the match class from the wrapper and then
-	// for each highlighted word you find unwrap the highlighter
+	/**
+		Reset all matches by...
+		Removing the match class from the wrapper and then
+		for each highlighted word you find unwrap the highlighter
+	**/
 	$domItems
 		.removeClass(matchClass)
 		.find("." + termHighlightClass).each(function(){
@@ -75,6 +78,8 @@ var searchDom = function() {
 		});
 
 	if (!!inputVal) {
+
+		$domItems.addClass(hasQueryClass);
 
 		inputVal = inputVal.split(" ");
 
@@ -103,6 +108,8 @@ var searchDom = function() {
 			elToShow.addClass(matchClass);
 			highlightMatches(elToShow, inputVal);
 		});
+	} else {
+		$domItems.removeClass(hasQueryClass);
 	}
 	
 };
