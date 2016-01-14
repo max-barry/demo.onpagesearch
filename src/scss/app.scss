@@ -1,0 +1,28 @@
+/**
+Vendor
+*/
+@import "reset";
+@import "bourbon";
+@import "scut";
+
+/**
+Functions
+*/
+@import "math";
+
+/**
+Settings & variables
+*/
+@import "settings";
+@import "typography";
+
+/**
+Custom resets
+*/
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}

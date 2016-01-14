@@ -1,0 +1,34 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+
+<style>
+	span {color: red;}
+	.match {
+		background: blue;
+	}
+</style>
+
+<input type="text">
+
+<main>
+	<ul>
+		<li class="searchable">
+			<h2>This is my title</h2>
+			<p>This is my body content</p>
+		</li>
+		<li class="searchable">
+			<h2>This is my second title</h2>
+		</li>
+		<li class="searchable">
+			<h2>This is my third title</h2>
+			<p>This is my third body content</p>
+		</li>
+	</ul>
+</main>
+
+{% endblock %}
+
+{% block extrajs %}
+<!-- Template specific <script> tags should go here -->
+{% endblock %}
