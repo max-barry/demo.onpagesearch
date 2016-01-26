@@ -28,7 +28,7 @@ module.exports = {
         files: [{
             expand: true,
             cwd: "<%= package.build.css %>",
-            src: "**/*.css",
+            src: ["**/*.css", "!font.css"],
             dest: "<%= package.build.css %>"
         }]
     },
